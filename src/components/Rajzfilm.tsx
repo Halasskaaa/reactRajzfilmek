@@ -1,5 +1,3 @@
-
-
 type KartyaProps = {
     cim: string;
     studio: string;
