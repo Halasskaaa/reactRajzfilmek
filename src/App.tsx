@@ -1,25 +1,43 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import { rajzfilmek } from './data/dataRF';
 import Statisztika from './components/RajzfilmLista';
 import { Kartya } from './components/Rajzfilm';
+import type { RajzfilmTipus } from './types/typeRF';
+import Lablec from './components/Lablec';
 
 function App() {
-  // const [ rajzfilm, setRajzfilm ] = useState(rajzfilmek);
+  const [ rajzfilmek, setRajzfilmek ] = useState<RajzfilmTipus[]>([]);
+
+  useEffect(()=> {
+    fetch("./rajzfilmek.json")
+    .then(response => response.json())
+    .then(data => setRajzfilmek(data))
+  }, [])
+
+  const evszamok = rajzfilmek.map(item => item.megjelenesEve);
+  const legkorabbi = Math.min(...evszamok);
+  const legkesobbi = Math.max(...evszamok);
 
   return (
     <>
-    <div>
-      {rajzfilmek.map((rajzfilm, index) =>
-        <div key={index}>
-          <Kartya
-            cim = {rajzfilm.cim}
-            studio = {rajzfilm.studio}
-            megjelenes = {rajzfilm.megjelenesEve}
-          />
-        </div>
-      )}
+    <div className="container">
+      <Statisztika
+        db={rajzfilmek.length}
+        earliest={legkorabbi}
+        latest={legkesobbi}
+      />
+
+      {rajzfilmek.map(item => (
+        <Kartya
+          key={item.id}
+          cim={item.cim}
+          studio={item.studio}
+          megjelenes={item.megjelenesEve}
+        />
+      ))}      
+      <Lablec/>
     </div>
+
     </>
   )
 }
