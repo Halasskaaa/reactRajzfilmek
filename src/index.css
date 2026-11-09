@@ -1,12 +1,7 @@
 /* CSS-ek a W3school-tól */
 body {
-    background-color: rgb(231, 222, 206);
-    color:rgb(135, 46, 46);
-}
-
-.fogyoban {
-    color: red;
-    font-weight: bold;
+    background-color: #e9f7fa;
+    color: white;
 }
 
 table {
@@ -101,6 +96,27 @@ background-color: rgb(207, 204, 209);
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
+  transition: 0.3s;
   margin: auto;
   font-family: arial;
-}
+  width: 40%;
+  border-radius: 5px;
+  padding: 3%;
+  background-color: #64B6AC;
+  justify-self: center;
+}&:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+/* 
+#6874E8 blue
+#F7ACCF pink
+#7A5C61 brown
+
+
+#985F99
+#9684A1
+#AAACB0
+#B6C9BB
+#BFEDC1
+*/
