@@ -4,6 +4,7 @@ type KartyaProps = {
   cim: string;
   studio: string;
   megjelenes: number;
+  premier: string;
 };
 
 export function Kartya(props: KartyaProps) {
@@ -29,6 +30,10 @@ export function Kartya(props: KartyaProps) {
         <button onClick={() => setMegjelenes(!megjelenes)}>
           {megjelenes ? "Elrejtés" : "Megjelenítés"}
         </button>
+
+        <p className={`card-text ${megjelenes ? 'd-block' : 'd-none'}` }>
+            {props.premier}
+        </p>
       </div>
     </>
   );

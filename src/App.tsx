@@ -33,6 +33,7 @@ function App() {
           cim={item.cim}
           studio={item.studio}
           megjelenes={item.megjelenesEve}
+          premier={item.premier}
         />
       ))}      
       <Lablec/>
