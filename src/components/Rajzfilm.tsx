@@ -13,6 +13,7 @@ export function Kartya(props: KartyaProps) {
   return (
     <>
       <div className="card">
+        <br /><br />
         <h2>{props.cim}</h2>
         <p>{props.studio}</p>
         <p>{props.megjelenes}</p>
@@ -30,6 +31,8 @@ export function Kartya(props: KartyaProps) {
         <button onClick={() => setMegjelenes(!megjelenes)}>
           {megjelenes ? "Elrejtés" : "Megjelenítés"}
         </button>
+
+        <br />
 
         <p className={`card-text ${megjelenes ? 'd-block' : 'd-none'}` }>
             {props.premier}
