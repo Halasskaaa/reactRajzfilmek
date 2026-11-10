@@ -9,7 +9,7 @@ export default function Lablec() {
                     </p>
                     <p style={{ textAlign: 'center' }}>
                         <span style={{ fontWeight: 'bold' }}>Készítés dátuma: </span>
-                        <span className="dolt">2026.10.06.</span>
+                        <span className="dolt">2026.11.10.</span>
                     </p>
                 </div>
             </div>
